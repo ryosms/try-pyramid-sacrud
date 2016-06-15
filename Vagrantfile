@@ -12,5 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # synced fonder
   config.vm.synced_folder ".", "/vagrant", :mount_options => ['dmode=775', 'fmode=664']
 
+  config.vm.network :forwarded_port, guest: 8080, host: 8080
+  # Enable Provisioning
   config.vm.provision :shell, path: "./provisioning.sh"
 end

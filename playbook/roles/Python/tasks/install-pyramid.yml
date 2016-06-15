@@ -10,3 +10,7 @@
 - name    : Install pyramid
   pip     :
     name  : pyramid
+
+- name    : Install waitress
+  pip     :
+    name  : waitress
