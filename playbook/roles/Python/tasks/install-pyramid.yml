@@ -1,0 +1,12 @@
+---
+- name    : Install Development Tools
+  yum     :
+    name  : "@Development tools"
+
+- name    : Install backports.ssl_match_host_name
+  pip     :
+    name  : backports.ssl_match_hostname
+
+- name    : Install pyramid
+  pip     :
+    name  : pyramid
