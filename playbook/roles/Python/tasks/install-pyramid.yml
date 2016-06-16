@@ -14,3 +14,7 @@
 - name    : Install waitress
   pip     :
     name  : waitress
+
+- name    : Install mako template engine
+  pip     :
+    name  : pyramid_mako
