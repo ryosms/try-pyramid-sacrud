@@ -1,0 +1,3 @@
+[run]
+source = bankaccount
+omit = bankaccount/test*
