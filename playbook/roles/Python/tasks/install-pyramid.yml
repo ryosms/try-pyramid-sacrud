@@ -18,3 +18,15 @@
 - name    : Install mako template engine
   pip     :
     name  : pyramid_mako
+
+- name    : Install sqlalchemy
+  pip     :
+    name  : sqlalchemy
+
+- name    : Install pyramid_tm
+  pip     :
+    name  : pyramid_tm
+
+- name    : Install sqlahelper
+  pip     :
+    name  : sqlahelper
