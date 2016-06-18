@@ -15,5 +15,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :forwarded_port, guest: 6543, host: 6543
   config.vm.network :forwarded_port, guest: 8080, host: 8080
   # Enable Provisioning
-  config.vm.provision :shell, path: "./provisioning.sh"
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.playbook = "playbook/provisioning.yml"
+    ansible.limit = "all"
+    ansible.inventory_path = "playbook/hosts"
+  end
 end
