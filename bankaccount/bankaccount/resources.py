@@ -1,6 +1,6 @@
 from sqlalchemy.orm.exc import NoResultFound
 
-from . import models
+from bankaccount import models
 
 
 class Root(object):
