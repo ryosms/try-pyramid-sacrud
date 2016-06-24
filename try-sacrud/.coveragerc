@@ -1,0 +1,3 @@
+[run]
+source = try_sacrud
+omit = try_sacrud/test*
