@@ -2,4 +2,4 @@
 - include: install-yum-packages.yml
   become: yes
 - include: install-pyenv.yml
-  become: no
+- include: create-virtualenv.yml
