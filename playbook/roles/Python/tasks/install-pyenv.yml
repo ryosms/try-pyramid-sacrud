@@ -1,0 +1,27 @@
+---
+- name        : Check PyEnv installed
+  stat        :
+    path      : ~/.pyenv
+  register    : installed_pyenv
+
+- name        : Clone Repository of PyEnv
+  git         :
+    repo      : https://github.com/yyuu/pyenv.git
+    dest      : ~/.pyenv
+  when        : not installed_pyenv.stat.exists
+
+- name        : Clone Repository of PyEnv-Virtualenv
+  git         :
+    repo      : https://github.com/yyuu/pyenv-virtualenv.git
+    dest      : ~/.pyenv/plugins/pyenv-virtualenv
+  when        : not installed_pyenv.stat.exists
+
+- name        : Setup PyEnv Environment
+  template    :
+    src       : bash_profile.j2
+    dest      : ~/.bash_profile
+  register    : copy_profile
+
+- name        : Source .bash_profile
+  shell       : source ~/.bash_profile
+  when        : copy_profile|changed

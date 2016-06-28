@@ -1,0 +1,13 @@
+---
+- name        : Install Development Tools
+  yum         :
+    name      : "@Development Tools"
+
+- name        : Install required packages
+  yum         : name={{ item }}
+  with_items  :
+    - readline-devel
+    - zlib-devel
+    - bzip2-devel
+    - sqlite-devel
+    - openssl-devel

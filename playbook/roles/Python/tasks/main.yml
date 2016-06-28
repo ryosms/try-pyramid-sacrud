@@ -1,3 +1,5 @@
 ---
-- include: install-pip.yml
-- include: install-pyramid.yml
+- include: install-yum-packages.yml
+  become: yes
+- include: install-pyenv.yml
+  become: no
